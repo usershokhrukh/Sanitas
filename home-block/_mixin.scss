@@ -1,0 +1,12 @@
+@mixin display() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button($bg, $color, $x, $y) {
+  background-color: $bg;
+  color: $color;
+  border: none;
+  padding: $y $x;
+}

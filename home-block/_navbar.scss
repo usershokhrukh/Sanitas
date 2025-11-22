@@ -1,0 +1,140 @@
+.navbar {
+  @include display();
+  padding: 20px 100px;
+
+  &__top {
+    @include display();
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__top-right {
+    @include display();
+    flex-grow: 1;
+    justify-content: end;
+    gap: 20px;
+  }
+
+  &__top-items {
+    @include display();
+    gap: 10px;
+  }
+
+  &__title {
+    font-family: "Yeseva One";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    /* identical to box height */
+    text-transform: uppercase;
+
+    /* Primary */
+    color: #0ebe7f;
+  }
+
+  &__top-span {
+    color: #159eec !important;
+  }
+
+  &__items-right {
+    @include display();
+    flex-direction: column;
+    align-items: start;
+    gap: 3px;
+  }
+
+  &__items-title {
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    text-transform: uppercase;
+
+    /* Primary */
+    color: #1f2b6c;
+  }
+
+  &__items-link {
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    /* Secondary */
+    color: #0ebe7f;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (min-width: 500px) and (max-width: 1080px) {
+  .navbar {
+    padding: 15px 30px;
+
+    &__top {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__title {
+      display: none;
+    }
+
+    &__top-right {
+      width: 100%;
+
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 10px 0px;
+    width: 90%;
+
+    &__title {
+      display: none;
+    }
+
+    &__top {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__top-right {
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    &__top-items {
+      svg {
+        width: 23px;
+        height: 23px;
+      }
+    }
+
+    &__items-title {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      text-transform: uppercase;
+    }
+
+    &__items-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    }
+  }
+}

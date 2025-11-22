@@ -1,0 +1,148 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.contain {
+  max-width: 3000px;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 100px;
+}
+.navbar__top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+}
+.navbar__top-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  justify-content: end;
+  gap: 20px;
+}
+.navbar__top-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.navbar__title {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 42px;
+  /* identical to box height */
+  text-transform: uppercase;
+  /* Primary */
+  color: #0ebe7f;
+}
+.navbar__top-span {
+  color: #159eec !important;
+}
+.navbar__items-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: start;
+  gap: 3px;
+}
+.navbar__items-title {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  text-transform: uppercase;
+  /* Primary */
+  color: #1f2b6c;
+}
+.navbar__items-link {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  /* Secondary */
+  color: #0ebe7f;
+}
+.navbar__items-link:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 500px) and (max-width: 1080px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+  .navbar__top {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .navbar__title {
+    display: none;
+  }
+  .navbar__top-right {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 500px) {
+  .navbar {
+    padding: 10px 0px;
+    width: 90%;
+  }
+  .navbar__title {
+    display: none;
+  }
+  .navbar__top {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .navbar__top-right {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .navbar__top-items svg {
+    width: 23px;
+    height: 23px;
+  }
+  .navbar__items-title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+  }
+  .navbar__items-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}/*# sourceMappingURL=style.css.map */
