@@ -1,0 +1,56 @@
+.special {
+  @include display();
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 100px;
+
+
+
+  &__box {
+    display: grid;
+    margin-top: 40px;
+    grid-template-columns: auto auto auto auto;
+    border:1px solid rgba(148, 148, 148, 0.152);
+  }
+
+  &__items {
+    @include display();
+    flex-direction: column;
+    border: 1px solid rgba(148, 148, 148, 0.152);
+    padding: 50px 57px;
+    gap: 10px;
+
+    &:hover {
+      background-color: #42d5a2;
+      color: white;
+    }
+
+    
+  }
+
+  svg {
+      color: #159EEC;
+    }
+}
+
+
+@media (min-width: 500px) and (max-width: 1080px) {
+    .special {
+      padding: 20px 50px;
+
+
+      &__box {
+        display: none;
+      }
+    }
+}
+
+@media (max-width: 500px) {
+  .special {
+    padding: 20px 10%;
+
+    &__box {
+      display: none;
+    }
+  }
+}

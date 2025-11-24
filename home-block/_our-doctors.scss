@@ -1,0 +1,77 @@
+.doctors {
+  @include display();
+  flex-direction: column;
+  padding: 40px 100px;
+  gap: 10px;
+
+  &__cards {
+    @include display();
+    gap: 30px;
+  }
+
+  &__items {
+    @include display();
+    flex-direction: column;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px
+  }
+
+  &__items-top {
+    @include display();
+    flex-direction: column;
+    gap: 10px;
+    background-color: #BFD2F8;
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+  &__items-top-text {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    /* or 25px */
+
+    /* Primary */
+    color: #1F2B6C;
+  }
+
+  &__items-title {
+    /* Caption */
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    /* Primary */
+    color: #1F2B6C;
+  }
+
+  &__items-icons {
+    @include display();
+    gap: 5px;
+  }
+
+  &__bottom-text {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+    text-align: center;
+
+    /* Accent */
+    color: white;
+    background-color: #0ebe7f;
+    width: 100%;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+  }
+}

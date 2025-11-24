@@ -1,8 +1,12 @@
 .navbar {
   @include display();
+  position: fixed;
   // padding: 20px 100px;
   flex-direction: column;
   align-items: start;
+  z-index: 4;
+  width: 100%;
+  top: 0px;
 
   &__top {
     @include display();
@@ -11,7 +15,8 @@
     gap: 20px;
     padding: 20px 100px; 
     max-width: 3000px;
-    margin: auto
+    margin: auto;
+    background-color: white;
   }
 
   &__top-right {
@@ -81,21 +86,18 @@
 
   &__bottom {
     @include display();
-    justify-content: end;
     background-color: #0ebe7f;
-    // background-color: #0ca46f;
     width: 100%;
-    padding: 30px 100px;
+    padding: 20px 100px;
     gap: 10px;
   }
 
   &__list {
     @include display();
+    justify-content: end;
     gap: 10px;
     width: 100%;
-    max-width: 3000px;
-    margin: auto;
-    justify-content: end;
+    max-width: 2600px;
 
   }
 
@@ -123,17 +125,38 @@
     background-color: #BFD2F8;
     padding: 10px 20px;
     border-radius: 50px;
-
+    animation-name: abd;
+    animation-duration: 3s;
+    animation-iteration-count: 5;
+    // animation-fill-mode: forwards;
+    border: none;
     &:hover {
       opacity: 0.9;
     }
+
   }
 
+
+
 }
+
+  @keyframes abd {
+    25%{
+      transform: rotate(-5deg) scale(1.05);
+    }50%{
+      transform: rotate(0deg);
+    }75%{
+      transform: rotate(5deg) scale(1.05);
+    }100%{
+      transform: rotate(0deg);
+
+    }
+  }
 
 @media (min-width: 500px) and (max-width: 1080px) {
   .navbar {
     // padding: 15px 30px;
+    position: static;
     padding: 0px;
     &__top {
       flex-wrap: wrap;
@@ -162,6 +185,7 @@
 @media (max-width: 500px) {
   .navbar {
     // padding: 10px 0px;
+    position: static;
     padding:  0px;
     width: 100%;
 
