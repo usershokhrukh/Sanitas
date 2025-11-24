@@ -25,7 +25,8 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 100px;
+  flex-direction: column;
+  align-items: start;
 }
 .navbar__top {
   display: flex;
@@ -34,6 +35,9 @@ li {
   width: 100%;
   justify-content: space-between;
   gap: 20px;
+  padding: 20px 100px;
+  max-width: 3000px;
+  margin: auto;
 }
 .navbar__top-right {
   display: flex;
@@ -95,28 +99,79 @@ li {
 .navbar__items-link:hover {
   text-decoration: underline;
 }
+.navbar__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: end;
+  background-color: #0ebe7f;
+  width: 100%;
+  padding: 30px 100px;
+  gap: 10px;
+}
+.navbar__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 3000px;
+  margin: auto;
+  justify-content: end;
+}
+.navbar__links {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  /* white */
+  color: #FCFEFE;
+}
+.navbar__links:hover {
+  color: #BFD2F8;
+}
+.navbar__link {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #1F2B6C;
+  background-color: #BFD2F8;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+.navbar__link:hover {
+  opacity: 0.9;
+}
 
 @media (min-width: 500px) and (max-width: 1080px) {
   .navbar {
-    padding: 15px 30px;
+    padding: 0px;
   }
   .navbar__top {
     flex-wrap: wrap;
     justify-content: center;
+    padding: 10px 50px;
+    width: 100%;
   }
   .navbar__title {
     display: none;
   }
   .navbar__top-right {
     width: 100%;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
+  }
+  .navbar__bottom {
+    padding: 30px 50px;
   }
 }
 @media (max-width: 500px) {
   .navbar {
-    padding: 10px 0px;
-    width: 90%;
+    padding: 0px;
+    width: 100%;
   }
   .navbar__title {
     display: none;
@@ -124,6 +179,10 @@ li {
   .navbar__top {
     flex-wrap: wrap;
     justify-content: center;
+    padding: 10px 10%;
+  }
+  .navbar__bottom {
+    padding: 30px 10%;
   }
   .navbar__top-right {
     width: 100%;

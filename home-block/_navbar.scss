@@ -1,12 +1,17 @@
 .navbar {
   @include display();
-  padding: 20px 100px;
+  // padding: 20px 100px;
+  flex-direction: column;
+  align-items: start;
 
   &__top {
     @include display();
     width: 100%;
     justify-content: space-between;
     gap: 20px;
+    padding: 20px 100px; 
+    max-width: 3000px;
+    margin: auto
   }
 
   &__top-right {
@@ -73,15 +78,67 @@
       text-decoration: underline;
     }
   }
+
+  &__bottom {
+    @include display();
+    justify-content: end;
+    background-color: #0ebe7f;
+    width: 100%;
+    padding: 30px 100px;
+    gap: 10px;
+  }
+
+  &__list {
+    @include display();
+    gap: 10px;
+    width: 100%;
+    max-width: 3000px;
+    margin: auto;
+    justify-content: end;
+
+  }
+
+  &__links {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    /* white */
+    color: #FCFEFE;
+
+    &:hover {
+      color: #BFD2F8;
+    }
+  }
+
+  &__link {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #1F2B6C;
+    background-color: #BFD2F8;
+    padding: 10px 20px;
+    border-radius: 50px;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
 }
 
 @media (min-width: 500px) and (max-width: 1080px) {
   .navbar {
-    padding: 15px 30px;
-
+    // padding: 15px 30px;
+    padding: 0px;
     &__top {
       flex-wrap: wrap;
       justify-content: center;
+      padding: 10px 50px;
+      width: 100%;
     }
 
     &__title {
@@ -91,16 +148,21 @@
     &__top-right {
       width: 100%;
 
-      justify-content: center;
+      justify-content: space-between;
       flex-wrap: wrap;
+    }
+
+    &__bottom {
+      padding: 30px 50px;
     }
   }
 }
 
 @media (max-width: 500px) {
   .navbar {
-    padding: 10px 0px;
-    width: 90%;
+    // padding: 10px 0px;
+    padding:  0px;
+    width: 100%;
 
     &__title {
       display: none;
@@ -109,6 +171,10 @@
     &__top {
       flex-wrap: wrap;
       justify-content: center;
+      padding: 10px 10%;
+    }
+    &__bottom {
+      padding: 30px 10%; 
     }
 
     &__top-right {
