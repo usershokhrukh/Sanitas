@@ -3,15 +3,15 @@
   flex-direction: column;
   padding: 40px 100px;
   gap: 10px;
-  margin-top: 190px;
-
+  margin-top: 50px;
   &__cards {
     @include display();
     gap: 30px;
-    overflow-x: auto;
+    // overflow-x: auto;
+    flex-wrap: wrap;
     width: 100%;
-    justify-content: space-between;
-    max-width: 1200px;
+    justify-content: center;
+    // max-width: 1300px;
     padding: 0px 0px 20px 0px;
   }
 
@@ -20,23 +20,35 @@
     flex-direction: column;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-        animation-name: form;
+    animation-name: form;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    animation-fill-mode: forwards
+    animation-fill-mode: forwards;
+    transition: all 0.4s ease-in-out;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    &:hover {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+
+    img {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
   }
 
   &__items-top {
     @include display();
     flex-direction: column;
     gap: 10px;
-    background-color: #BFD2F8;
+    background-color: #bfd2f8;
     width: 100%;
     padding: 10px 20px;
   }
 
   &__items-top-text {
-    font-family: 'Work Sans';
+    font-family: "Work Sans";
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -44,12 +56,12 @@
     /* or 25px */
 
     /* Primary */
-    color: #1F2B6C;
+    color: #1f2b6c;
   }
 
   &__items-title {
     /* Caption */
-    font-family: 'Work Sans';
+    font-family: "Work Sans";
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
@@ -58,7 +70,7 @@
     text-transform: uppercase;
 
     /* Primary */
-    color: #1F2B6C;
+    color: #1f2b6c;
   }
 
   &__items-icons {
@@ -67,7 +79,7 @@
   }
 
   &__bottom-text {
-    font-family: 'Work Sans';
+    font-family: "Work Sans";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -89,18 +101,33 @@
   }
 }
 
-
-@media (min-width:500px) and (max-width: 1080px) {
+@media (min-width: 500px) and (max-width: 1080px) {
   .doctors {
     padding: 30px 50px;
     margin-top: 20px;
+
+    &__cards {
+      justify-content: center;
+      width: 100%;
+    }
   }
 }
 
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .doctors {
     margin-top: 20px;
-
     padding: 20px 10%;
+
+    &__cards {
+      justify-content: center;
+      width: 100%;
+    }
+
+    &__items {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
 }

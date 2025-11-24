@@ -6,11 +6,170 @@
   flex-direction: column;
   align-items: start;
   background-color: rgba(229, 230, 232, 0.851);
-  background-image: url(../img/home-intro-img.png);
+  background-image: url(../img/doctor16.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: right;
   padding: 20px 100px;
   margin-top: 160px;
+  // background-attachment: fixed;
+
+  &__book {
+    @include display();
+    flex-direction: column;
+
+    background-color: #aec7db;
+    position: absolute;
+    left: 60%;
+    z-index: 3;
+    margin: auto;
+    padding: 1%;
+    border-radius: 5px;
+    gap: 10px;
+    max-width: 1000px;
+    justify-content: start;
+    border: 3px solid #1f2b6c77;
+    visibility: hidden;
+
+    img {
+      width: 40%;
+      height: auto;
+      border-radius: 3px;
+    }
+
+    &-close {
+      position: absolute;
+      right: 5px;
+      top: 10px;
+    }
+  }
+
+  &__choose-card {
+    @include display();
+    flex-direction: column;
+    align-items: start;
+    width: 60%;
+    // background-color: blue
+  }
+
+  &__book-choose {
+    @include display();
+    position: relative;
+    justify-content: start;
+    gap: 30px;
+    width: 100%;
+
+    svg {
+      position: relative;
+      left: -20px;
+    }
+  }
+  &__choose-text {
+    background-color: #1f2b6c;
+    width: 100%;
+    color: #bfd2f8 !important;
+    padding: 5px 0px 5px 5px;
+  }
+
+  &__choose-text-first {
+    width: 40%;
+    border-radius: 2px;
+  }
+
+  &__choose-span {
+    // display: none;
+    padding: 3px 10px 3px 3px;
+    background-color: #159eec;
+    border-radius: 2px;
+  }
+
+  &__book-info {
+    @include display();
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+  }
+
+  &__book-info-box {
+    @include display();
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+
+  &__book-title {
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #bfd2f8;
+    background-color: #1f2b6c;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+
+  &__book-text {
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    /* or 25px */
+
+    color: #000000;
+  }
+
+  &__book-form {
+    @include display();
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__book-input {
+    padding: 1%;
+    width: 100%;
+    height: 50px;
+    outline: none;
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    // border-radius: 5px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #1f2b6c;
+    color: #1f2b6c;
+    padding: 0px;
+  }
+
+  &__textarea {
+    width: 100% !important;
+    min-height: 100px;
+    max-height: 130px;
+  }
+
+  &__book-input::placeholder {
+    color: #1f2b6c;
+  }
+
+  &__book-button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    background-color: #1f2b6c;
+    color: white;
+  }
 
   &__section {
     @include display();
@@ -52,23 +211,22 @@
   }
 
   &__button {
-    font-family: 'Work Sans';
+    font-family: "Work Sans";
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
     /* identical to box height */
     /* Primary */
-    color: #1F2B6C;
+    color: #1f2b6c;
     padding: 10px 20px;
     border: none;
     border-radius: 50px;
-    background-color: #BFD2F8;
+    background-color: #bfd2f8;
 
     &:hover {
       opacity: 0.8;
     }
-    
   }
 
   &__items {
@@ -80,11 +238,11 @@
     animation-name: form;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    animation-fill-mode: forwards
+    animation-fill-mode: forwards;
   }
 
   &__items-text {
-    font-family: 'Work Sans';
+    font-family: "Work Sans";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -92,7 +250,7 @@
     /* or 22px */
 
     /* white */
-    color: #FCFEFE;
+    color: #fcfefe;
   }
 
   &__items:nth-child(1) {
@@ -100,11 +258,11 @@
   }
 
   &__items:nth-child(2) {
-    background-color: #5ad3a9;
+    background-color: #72d4b2;
   }
   &__items:nth-child(3) {
     // background-color: #0a7a53;
-    background-color: #BFD2F8;
+    background-color: #9cecd0;
   }
 }
 
@@ -116,9 +274,15 @@
     background-position: right top;
     height: 300px;
     &__sup-title {
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0.16em;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.16em;
+    }
+
+    &__book {
+      right: 10px;
+      left: 10px;
+      animation: none;
     }
 
     &__title {
@@ -143,10 +307,16 @@
     margin-top: 0px;
 
     background-position: center top;
+
+    &__book {
+      right: 10px;
+      left: 10px;
+      animation: none;
+    }
     &__sup-title {
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0.16em;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.16em;
     }
 
     &__title {
@@ -157,10 +327,9 @@
     &__button {
       font-size: 14px;
     }
-    
-    &__cards{
+
+    &__cards {
       display: none;
     }
   }
 }
-

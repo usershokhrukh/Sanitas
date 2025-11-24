@@ -1,6 +1,6 @@
 .navbar {
   @include display();
-  position: fixed;
+  // position: fixed;
   // padding: 20px 100px;
   flex-direction: column;
   align-items: start;
@@ -13,7 +13,7 @@
     width: 100%;
     justify-content: space-between;
     gap: 20px;
-    padding: 20px 100px; 
+    padding: 20px 100px;
     max-width: 3000px;
     margin: auto;
     background-color: white;
@@ -38,7 +38,7 @@
     font-size: 36px;
     line-height: 42px;
     /* identical to box height */
-    text-transform: uppercase;
+    text-transform: lowercase;
 
     /* Primary */
     color: #0ebe7f;
@@ -98,60 +98,59 @@
     gap: 10px;
     width: 100%;
     max-width: 2600px;
-
   }
 
   &__links {
-    font-family: 'Work Sans';
+    font-family: "Work Sans";
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     /* white */
-    color: #FCFEFE;
+    color: #fcfefe;
 
     &:hover {
-      color: #BFD2F8;
+      color: #bfd2f8;
     }
   }
 
   &__link {
-    font-family: 'Work Sans';
+    @include display();
+    width: 180px;
+    font-family: "Work Sans";
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: #1F2B6C;
-    background-color: #BFD2F8;
+    color: #1f2b6c;
+    background-color: #bfd2f8;
     padding: 10px 20px;
     border-radius: 50px;
     animation-name: abd;
     animation-duration: 3s;
-    animation-iteration-count: 5;
-    // animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+
     border: none;
     &:hover {
       opacity: 0.9;
     }
-
   }
-
-
-
 }
 
-  @keyframes abd {
-    25%{
-      transform: rotate(-5deg) scale(1.05);
-    }50%{
-      transform: rotate(0deg);
-    }75%{
-      transform: rotate(5deg) scale(1.05);
-    }100%{
-      transform: rotate(0deg);
-
-    }
+@keyframes abd {
+  25% {
+    transform: rotate(-5deg) scale(1.05);
   }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(5deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 
 @media (min-width: 500px) and (max-width: 1080px) {
   .navbar {
@@ -186,7 +185,7 @@
   .navbar {
     // padding: 10px 0px;
     position: static;
-    padding:  0px;
+    padding: 0px;
     width: 100%;
 
     &__title {
@@ -199,7 +198,7 @@
       padding: 10px 10%;
     }
     &__bottom {
-      padding: 30px 10%; 
+      padding: 30px 10%;
     }
 
     &__top-right {
@@ -223,9 +222,9 @@
     }
 
     &__items-link {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
     }
 
     &__list {

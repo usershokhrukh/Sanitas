@@ -4,7 +4,6 @@
   gap: 60px;
   padding: 20px 100px;
 
-
   &__left {
     @include display();
     flex-direction: column;
@@ -12,13 +11,13 @@
     border: 2px solid #1f2b6c52;
     border-radius: 5px;
     // padding: 24px;
-        animation-name: form;
+    animation-name: form;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    animation-fill-mode: forwards
+    animation-fill-mode: forwards;
   }
 
-  &__left-items{ 
+  &__left-items {
     @include display();
     flex-direction: column;
     padding: 24px;
@@ -58,9 +57,8 @@
   }
 
   &__center-title {
-
     /* Title */
-    font-family: 'Work Sans';
+    font-family: "Work Sans";
     font-style: normal;
     font-weight: 500;
     font-size: 26px;
@@ -78,14 +76,18 @@
 
   &__list-item {
     background-color: #0ebe7f;
-    padding: 10px 20px;
+    padding: 20px 20px;
     border-radius: 3px;
     color: white;
-    animation-name: items-animate;
-    animation-duration: 3s;
-    animation-iteration-count: 4;
     p {
       color: white;
+    }
+
+    &:hover {
+      animation-name: items-animate;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: forwards;
     }
   }
 
@@ -96,28 +98,19 @@
   }
 
   &__img {
-    width:100%;
-    height: 50%;
+    border-radius: 5px;
   }
 }
 
 @keyframes items-animate {
-  20%{
-    transform: translateY(-15px) rotate(0.2deg) scale(1.02);
-  }40%{
-    transform: translateY(0px) rotate(0deg);
-  }50%{
-    transform: translateY(-7px);
-  }60%{
-    transform: translateY(0px);
-  }70%{
-    transform: translateY(-5px);
-  }80%{
-    transform: translateY(0px);
-  }90%{
-    transform: translateY(-3px);
-  }100%{
-    transform: translateY(0px);
+  0% {
+    transform: scale(1.02);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.02);
   }
 }
 
