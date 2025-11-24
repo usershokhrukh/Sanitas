@@ -83,6 +83,7 @@
     @include display();
     justify-content: end;
     background-color: #0ebe7f;
+    // background-color: #0ca46f;
     width: 100%;
     padding: 30px 100px;
     gap: 10px;
@@ -201,6 +202,12 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
+    }
+
+    &__list {
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
     }
   }
 }
