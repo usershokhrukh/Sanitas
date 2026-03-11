@@ -1,104 +1,69 @@
-const elForm = document.querySelector(".appoint__form");
-const elServiceItems = document.querySelectorAll(".services__list-item");
-const elDoctorsItems = document.querySelectorAll(".doctors__items");
-const elIntroBookTitle = document.querySelector(".intro__book-title");
-const elIntroBookText = document.querySelector(".intro__book-text");
-const elDoctorsItemsText = document.querySelectorAll(
-  ".doctors__items-top-text"
-);
-const elDoctorsItemsTitle = document.querySelectorAll(".doctors__items-title");
-const elIntroBookImg = document.querySelector(".intro__book-img");
-const elDoctorsImg = document.querySelectorAll(".doctors__img");
-const elIntroBook = document.querySelector(".intro__book");
-const elCloseBook = document.querySelector(".intro__book-close");
-const elIntroBookForm = document.querySelector(".intro__book-form");
-const elIntroChooseCard = document.querySelector(".intro__choose-card");
-const elIntroTextSpan = document.querySelectorAll(".intro__choose-span");
-const elBookChoose = document.querySelector(".intro__book-choose");
-// let showBook = false;
-elForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  elForm.reset();
+// --- Selectors ---
+const doctorsCards = document.querySelectorAll(".doctors__items");
+const docTitles = document.querySelectorAll(".doctors__items-title");
+const docSpecs = document.querySelectorAll(".doctors__items-top-text");
+const docImages = document.querySelectorAll(".doctors__img");
+
+const bookingModal = document.querySelector(".booking-modal");
+const modalImg = document.querySelector(".booking-modal__image");
+const modalBadge = document.querySelector(".booking-modal__badge");
+const modalName = document.querySelector(".booking-modal__doctor-name");
+const closeBtn = document.querySelector(".booking-modal__close");
+const bookingForm = document.querySelector(".booking-modal__form");
+
+const navbarProfile = document.querySelector(".navbar__profile");
+const medicalRecord = document.querySelector(".medical-record");
+
+// --- 1. Medical Record Sidebar ---
+navbarProfile.addEventListener("click", () => {
+  medicalRecord.classList.toggle("none");
 });
 
-function elDoctorsItemsF(index) {
-  elIntroBookTitle.textContent = `${elDoctorsItemsTitle[index].textContent}`;
-  elIntroBookText.textContent = `${elDoctorsItemsText[index].textContent}`;
-  elIntroBookImg.src = elDoctorsImg[index].src;
-  if (window.innerWidth > 1080) {
-    elIntroBook.style.cssText = `
-    animation-name: showBook;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-  `;
-  } else {
-    elIntroBook.style.cssText = `
-      visibility: visible;
-    `;
+// --- 2. Modalni ochish funksiyasi ---
+doctorsCards.forEach((card, index) => {
+  card.addEventListener("click", () => {
+    // Ma'lumotlarni rasmda ko'rsatilganidek to'ldirish
+    modalImg.src = docImages[index].src;
+    modalBadge.textContent = docSpecs[index].textContent;
+    modalName.textContent = docTitles[index].textContent;
+
+    // Modalni ko'rsatish
+    bookingModal.classList.remove("none");
+    // document.body.style.overflow = "hidden"; // Orqa fonni qotirish
+  });
+});
+
+// --- 3. Modalni yopish funksiyasi ---
+const closeModal = () => {
+  bookingModal.classList.add("none");
+  document.body.style.overflow = "auto";
+};
+
+// Yopish tugmasi (X) endi aniq ishlaydi
+closeBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  closeModal();
+});
+
+// Modal tashqarisini (overlay) bosganda yopish
+window.addEventListener("click", (e) => {
+  if (e.target === bookingModal) {
+    closeModal();
   }
-  // showBook = true;
-}
-
-function elTextSpan(index) {
-  elIntroTextSpan[0].textContent = elIntroTextSpan[index].textContent;
-  console.log("2");
-
-  elIntroChooseCard.style.cssText = `
-    visibility:hidden;
-  `;
-}
-
-elBookChoose.addEventListener("click", () => {
-  console.log("1");
-
-  elIntroChooseCard.style.cssText = `
-    visibility: visible;
-    animation-name: showBook;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-  `;
 });
 
-elIntroTextSpan[1].addEventListener("click", () => {
-  elTextSpan(1);
-});
-elIntroTextSpan[2].addEventListener("click", () => {
-  elTextSpan(2);
-});
-elIntroTextSpan[3].addEventListener("click", () => {
-  elTextSpan(3);
+// ESC tugmasini bosganda yopish
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeModal();
 });
 
-elDoctorsItems[0].addEventListener("click", () => {
-  elDoctorsItemsF(0);
-});
-
-elDoctorsItems[1].addEventListener("click", () => {
-  elDoctorsItemsF(1);
-});
-elDoctorsItems[2].addEventListener("click", () => {
-  elDoctorsItemsF(2);
-});
-
-window.addEventListener("resize", () => {
-  elIntroBook.style.cssText = `
-    visibility: hidden;
-  `;
-  elIntroChooseCard.style.cssText = `
-    visibility:hidden;
-  `;
-});
-
-elCloseBook.addEventListener("click", () => {
-  elIntroBook.style.cssText = `
-    visibility: hidden;
-  `;
-  elIntroChooseCard.style.cssText = `
-    visibility:hidden;
-  `;
-});
-
-elIntroBookForm.addEventListener("submit", (e) => {
+// --- 4. Formani yuborish ---
+bookingForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  elIntroBookForm.reset();
+  alert("Xabaringiz yuborildi!");
+  bookingForm.reset();
+  closeModal();
 });
+
+// Ekran o'lchami o'zgarganda xatolik bo'lmasligi uchun yopish
+window.addEventListener("resize", closeModal);

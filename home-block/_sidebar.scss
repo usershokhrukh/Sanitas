@@ -1,0 +1,247 @@
+// Variables
+$bg-body: #f4f7f6;
+$bg-card: #ffffff;
+$color-border: #eeeeee;
+$color-title: #333333;
+$color-label: #555555;
+$color-value: #777777;
+$accent-green: #2ecc71;
+$max-width: 750px;
+
+// Breakpoint variable
+$mobile: 600px;
+
+.medical-record {
+    background-color: $bg-body;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 1%;
+    z-index: 5;
+    top: 200px;
+
+    // Mobile Adjustment for Position
+    @media (max-width: $mobile) {
+        position: relative; // Absolute positioning usually breaks on mobile
+        top: 20px;
+        right: 0;
+        padding: 10px;
+    }
+
+    &__wrapper {
+        width: 100%;
+        max-width: $max-width;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.patient-card {
+    background-color: $bg-card;
+    padding: 25px 35px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+    @media (max-width: $mobile) {
+        padding: 15px 20px; // Less padding on mobile
+    }
+
+    &--upcoming {
+        border-left: 6px solid $accent-green;
+    }
+
+    &__title {
+        font-size: 2.2rem;
+        font-weight: 500;
+        margin-bottom: 30px;
+        color: $color-title;
+
+        @media (max-width: $mobile) {
+            font-size: 1.5rem; // Minimized font size
+            margin-bottom: 15px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        padding: 15px 0;
+        border-bottom: 1px solid $color-border;
+        align-items: center;
+
+        &--no-border {
+            border-bottom: none;
+        }
+
+        @media (max-width: $mobile) {
+            flex-direction: column; // Stack label and value vertically
+            align-items: flex-start;
+            padding: 10px 0;
+        }
+    }
+
+    &__label {
+        flex: 0 0 220px; 
+        font-weight: 500;
+        color: $color-label;
+        font-size: 1rem;
+
+        @media (max-width: $mobile) {
+            flex: 0 0 auto; // Remove fixed width
+            font-size: 0.85rem; // Smaller label
+            margin-bottom: 4px;
+            color: lighten($color-label, 10%); // Slightly lighter for hierarchy
+        }
+    }
+
+    &__value {
+        color: $color-value;
+        font-size: 0.95rem;
+        flex: 1;
+
+        @media (max-width: $mobile) {
+            font-size: 0.9rem;
+            width: 100%;
+        }
+    }
+}
+
+
+
+.intro__book {
+  display: none; // Hidden by default
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+
+  &--active {
+    display: block; // Or flex
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro__choose-card {
+  display: none;
+  
+  &--active {
+    display: block;
+    animation: showBook 0.4s forwards;
+  }
+}
+
+// Ensure "none" class is defined
+.none {
+  display: none !important;
+}
+
+
+// // Variables from the image
+// $navy: #1F2B6C;
+// $bg-modal: #E3E9F7;
+// $input-border: rgba(31, 43, 108, 0.2);
+
+// .intro-book {
+//   // Positioning
+//   position: absolute; // Fixed is better for modals to stay in view
+//   top: 0px;
+//   transform: translate(-50%, -50%) scale(0.9);
+//   z-index: 1000;
+//   background-color: red;
+  
+//   // Display State
+//   display: none; 
+//   opacity: 0;
+//   transition: all 0.3s ease;
+
+//   // Active State
+//   &--active {
+//     display: block;
+//     opacity: 1;
+//     transform: translate(-50%, -50%) scale(1);
+//   }
+
+//   // Visuals from image
+//   background-color: $bg-modal;
+//   width: 90%;
+//   max-width: 440px;
+//   padding: 40px;
+//   border-radius: 4px;
+//   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+
+//   &-info {
+//     display: flex;
+//     gap: 20px;
+//     align-items: center;
+//     margin-bottom: 30px;
+//   }
+
+//   &-img {
+//     border-radius: 4px;
+//     object-fit: cover;
+//   }
+
+//   &-title { // The "Nevropatolog" badge
+//     background: $navy;
+//     color: white;
+//     font-size: 12px;
+//     padding: 4px 10px;
+//     display: inline-block;
+//     margin-bottom: 8px;
+//   }
+
+//   &-text { // Dr Name
+//     color: $navy;
+//     font-weight: 700;
+//     font-size: 20px;
+//   }
+
+//   &-close {
+//     position: absolute;
+//     top: 20px;
+//     right: 20px;
+//     cursor: pointer;
+//     transition: opacity 0.2s;
+//     &:hover { opacity: 0.6; }
+//   }
+
+//   &-input {
+//     width: 100%;
+//     background: transparent;
+//     border: none;
+//     border-bottom: 1.5px solid $input-border;
+//     padding: 12px 0;
+//     margin-bottom: 15px;
+//     outline: none;
+//     color: $navy;
+//     &::placeholder { color: rgba($navy, 0.4); }
+//     &:focus { border-bottom-color: $navy; }
+//   }
+
+//   &-button {
+//     width: 100%;
+//     background: $navy;
+//     color: white;
+//     border: none;
+//     padding: 16px;
+//     font-weight: 700;
+//     cursor: pointer;
+//     margin-top: 20px;
+//     text-transform: uppercase;
+//     &:hover { background: lighten($navy, 5%); }
+//   }
+// }
+
+// // Background dimming overlay
+// .modal-overlay {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: rgba(0,0,0,0.4);
+//   z-index: 999;
+//   display: none;
+//   &--active { display: block; }
+// }

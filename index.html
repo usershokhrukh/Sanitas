@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -111,6 +111,77 @@
             </li>
           </ul>
           <a href="#appoint" class="navbar__link">Navbat oling</a>
+          <span class="navbar__profile">
+            <svg
+              style="color: white"
+              width="50px"
+              class="navbar__profile"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12.1597 16C10.1243 16 8.29182 16.8687 7.01276 18.2556C8.38039 19.3474 10.114 20 12 20C13.9695 20 15.7727 19.2883 17.1666 18.1081C15.8956 16.8074 14.1219 16 12.1597 16ZM12 4C7.58172 4 4 7.58172 4 12C4 13.8106 4.6015 15.4807 5.61557 16.8214C7.25639 15.0841 9.58144 14 12.1597 14C14.6441 14 16.8933 15.0066 18.5218 16.6342C19.4526 15.3267 20 13.7273 20 12C20 7.58172 16.4183 4 12 4ZM12 5C14.2091 5 16 6.79086 16 9C16 11.2091 14.2091 13 12 13C9.79086 13 8 11.2091 8 9C8 6.79086 9.79086 5 12 5ZM12 7C10.8954 7 10 7.89543 10 9C10 10.1046 10.8954 11 12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7Z"
+              ></path>
+            </svg>
+          </span>
+        </div>
+        <div class="sidebar-animate none medical-record">
+          <div class="medical-record__wrapper">
+            <!-- Profil ma'lumotlari -->
+            <section class="patient-card">
+              <h2 class="patient-card__title">Ma'lumot</h2>
+              <div class="patient-card__row">
+                <span class="patient-card__label">F.I.SH.</span>
+                <span class="patient-card__value">Burt Macklin</span>
+              </div>
+              <div class="patient-card__row">
+                <span class="patient-card__label">Email</span>
+                <span class="patient-card__value">abc@gmail.com</span>
+              </div>
+              <div class="patient-card__row">
+                <span class="patient-card__label">Telefon</span>
+                <span class="patient-card__value">00923469874656</span>
+              </div>
+              <div class="patient-card__row patient-card__row--no-border">
+                <span class="patient-card__label">Manzil</span>
+                <span class="patient-card__value">street no. 4, xyz</span>
+              </div>
+            </section>
+
+            <!-- Tibbiy tarix -->
+            <section class="patient-card">
+              <h2 class="patient-card__title">Tibbiy tarix</h2>
+              <div class="patient-card__row">
+                <span class="patient-card__label">Tarix</span>
+                <span class="patient-card__value">
+                  Bemorning mavsumiy astma va engil gipertenziya bilan bog'liq
+                  tibbiy tarixi bor.
+                </span>
+              </div>
+              <div class="patient-card__row patient-card__row--no-border">
+                <span class="patient-card__label">Allergiyalar</span>
+                <span class="patient-card__value"
+                  >Penitsillin, Yer yong'oq (Araxid)</span
+                >
+              </div>
+            </section>
+
+            <!-- Ertangi qabul -->
+            <section class="patient-card patient-card--upcoming">
+              <h2 class="patient-card__title">Ertangi qabul</h2>
+              <div class="patient-card__row">
+                <span class="patient-card__label">Band qilingan sana</span>
+                <span class="patient-card__value">12-mart, 2026 - 10:00</span>
+              </div>
+              <div class="patient-card__row patient-card__row--no-border">
+                <span class="patient-card__label">Klinika manzili</span>
+                <span class="patient-card__value"
+                  >Sanitas sog'lomlashtirish markazi, 2-qavat</span
+                >
+              </div>
+            </section>
+          </div>
         </div>
       </nav>
       <div id="home" class="intro contain">
@@ -170,80 +241,94 @@
           </div>
         </section>
       </div>
-      <div id="book" class="intro__book">
-        <div class="intro__book-info">
-          <img
-            height="100px"
-            width="130px"
-            class="intro__book-img"
-            src="./img/doctor10.avif"
-            alt=""
-          />
-          <div class="intro__book-info-box">
-            <h2 class="intro__book-title">Nevropatolog</h2>
-            <p class="intro__book-text">Dr.Adam Lee</p>
-          </div>
+      <div id="book" class="booking-modal">
+        <!-- Yopish tugmasi -->
+        <button class="booking-modal__close" aria-label="Yopish">
           <svg
-            class="intro__book-close"
-            xmlns="http://www.w3.org/2000/svg"
             width="20"
             height="20"
             viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org"
           >
             <path
-              fill="#1F2B6C"
-              fill-rule="evenodd"
               d="M4.28 3.22a.75.75 0 0 0-1.06 1.06L6.94 8l-3.72 3.72a.75.75 0 1 0 1.06 1.06L8 9.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L9.06 8l3.72-3.72a.75.75 0 0 0-1.06-1.06L8 6.94L4.28 3.22Z"
-              clip-rule="evenodd"
+              fill="#1F2B6C"
             />
           </svg>
-        </div>
-        <form class="intro__book-form">
-          <input placeholder="Name" class="intro__book-input" type="text" />
-          <input placeholder="Tel" class="intro__book-input" type="number" />
-          <input placeholder="email" class="intro__book-input" type="email" />
-          <input class="intro__book-input" type="time" />
-          <input class="intro__book-input" type="date" />
-          <div class="intro__book-choose">
-            <p
-              class="intro__book-text intro__choose-text intro__choose-text-first"
-            >
-              <span class="intro__choose-span">tanlang</span>
-            </p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-            >
-              <path fill="#1F2B6C" d="m6 15l5-5l-5-5l1-2l7 7l-7 7z" />
-            </svg>
-            <div class="intro__choose-card">
-              <p class="intro__book-text intro__choose-text">
-                <span class="intro__choose-span"
-                  >Online konsultatsiya qilish</span
-                >
-              </p>
-              <p class="intro__book-text intro__choose-text">
-                <span class="intro__choose-span"
-                  >ZOOM konsultatsiya qilish</span
-                >
-              </p>
-              <p class="intro__book-text intro__choose-text">
-                <span class="intro__choose-span"
-                  >Oldindan navbat (offline)</span
-                >
-              </p>
+        </button>
+
+        <!-- Shifokor haqida ma'lumot (Header) -->
+        <header class="booking-modal__header">
+          <div class="booking-modal__image-container">
+            <img
+              src="./img/doctor10.avif"
+              alt="Doctor"
+              class="booking-modal__image"
+            />
+          </div>
+          <div class="booking-modal__doctor-details">
+            <span class="booking-modal__badge">Nevropatolog</span>
+            <h3 class="booking-modal__doctor-name">Dr. Adam Lee</h3>
+          </div>
+        </header>
+
+        <!-- Form qismi -->
+        <form class="booking-modal__form">
+          <div class="booking-modal__field">
+            <input
+              type="text"
+              placeholder="Ismingiz"
+              class="booking-modal__input"
+            />
+          </div>
+
+          <div class="booking-modal__field">
+            <input
+              type="number"
+              placeholder="Telefon raqamingiz"
+              class="booking-modal__input"
+            />
+          </div>
+
+          <div class="booking-modal__field">
+            <input
+              type="email"
+              placeholder="Email"
+              class="booking-modal__input"
+            />
+          </div>
+
+          <!-- Sana va Vaqt (Bir qatorda) -->
+          <div class="booking-modal__row">
+            <div class="booking-modal__field booking-modal__field--half">
+              <input type="time" class="booking-modal__input" />
+            </div>
+            <div class="booking-modal__field booking-modal__field--half">
+              <input type="date" class="booking-modal__input" />
             </div>
           </div>
-          <textarea
-            placeholder="Message"
-            class="intro__book-input intro__textarea"
-            name=""
-            id=""
-          ></textarea>
 
-          <button class="intro__book-button">Send</button>
+          <!-- Tanlov qismi (Select replacement) -->
+          <div class="booking-modal__select-wrapper">
+            <div class="booking-modal__select-trigger">
+              <span>Xizmat turi (Tanlang)</span>
+              <svg width="12" height="12" viewBox="0 0 20 20" fill="none">
+                <path d="m6 15l5-5l-5-5l1-2l7 7l-7 7z" fill="#1F2B6C" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="booking-modal__field">
+            <textarea
+              placeholder="Xabar qoldiring"
+              class="booking-modal__input booking-modal__textarea"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="booking-modal__submit-btn">
+            Yuborish
+          </button>
         </form>
       </div>
     </header>
@@ -823,9 +908,11 @@
         ></iframe>
       </section>
       <section class="contact contain">
-        <h2 class="intro__sup-title place__sup-title">Get in touch</h2>
-        <h2 class="intro__title place__title">Contact</h2>
+        <h2 class="intro__sup-title place__sup-title">Biz bilan bog'laning</h2>
+        <h2 class="intro__title place__title">Kontaktlar</h2>
+
         <div class="contact__cards">
+          <!-- Shoshilinch yordam -->
           <div class="contact__items">
             <svg
               width="41"
@@ -849,10 +936,12 @@
                 stroke-linejoin="round"
               />
             </svg>
-            <p class="contact__items-title">Emergency</p>
+            <p class="contact__items-title">Tezkor yordam</p>
             <p class="contact__items-text">(237) 681-812-255</p>
             <p class="contact__items-text">(237) 666-331-894</p>
           </div>
+
+          <!-- Manzil -->
           <div class="contact__items">
             <svg
               width="32"
@@ -872,11 +961,12 @@
                 stroke-width="2"
               />
             </svg>
-
-            <p class="contact__items-title">Location</p>
-            <p class="contact__items-text">0123 Some place</p>
-            <p class="contact__items-text">9876 Some country</p>
+            <p class="contact__items-title">Manzil</p>
+            <p class="contact__items-text">0123 Ko'cha nomi</p>
+            <p class="contact__items-text">9876 Shahar, Davlat</p>
           </div>
+
+          <!-- Email -->
           <div class="contact__items">
             <svg
               width="38"
@@ -900,11 +990,12 @@
                 stroke-linejoin="round"
               />
             </svg>
-
-            <p class="contact__items-title">Email</p>
+            <p class="contact__items-title">Elektron pochta</p>
             <p class="contact__items-text">fildineeesoe@gmil.com</p>
             <p class="contact__items-text">myebstudios@gmail.com</p>
           </div>
+
+          <!-- Ish vaqti -->
           <div class="contact__items">
             <svg
               width="32"
@@ -926,10 +1017,9 @@
                 stroke-linecap="round"
               />
             </svg>
-
-            <p class="contact__items-title">Working Hours</p>
-            <p class="contact__items-text">Mon-Sat 09:00-20:00</p>
-            <p class="contact__items-text">Sunday Emergency only</p>
+            <p class="contact__items-title">Ish vaqti</p>
+            <p class="contact__items-text">Dush-Shanba 09:00-20:00</p>
+            <p class="contact__items-text">Yakshanba faqat favqulodda</p>
           </div>
         </div>
       </section>
@@ -939,31 +1029,31 @@
         <div class="footer__items">
           <h2 class="footer__title">SANITAS</h2>
           <p class="footer__text">
-            Leading the Way in Medical Execellence, Trusted Care.
+            Tibbiy mukammallikda yetakchi, ishonchli parvarish.
           </p>
         </div>
         <div class="footer__items">
-          <p class="footer__items-title">Important Links</p>
+          <p class="footer__items-title">Muhim havolalar</p>
           <ul class="footer__list">
             <li class="footer__list-items">
-              <a class="footer__text" href="#"> Appointment </a>
+              <a class="footer__text" href="#"> Qabulga yozilish </a>
             </li>
             <li class="footer__list-items">
-              <a class="footer__text" href="#"> Doctors </a>
+              <a class="footer__text" href="#"> Shifokorlar </a>
             </li>
             <li class="footer__list-items">
-              <a class="footer__text" href="#"> Services </a>
+              <a class="footer__text" href="#"> Xizmatlar </a>
             </li>
             <li class="footer__list-items">
-              <a class="footer__text" href="#"> About Us </a>
+              <a class="footer__text" href="#"> Biz haqimizda </a>
             </li>
           </ul>
         </div>
         <div class="footer__items">
-          <p class="footer__items-title">Contact Us</p>
+          <p class="footer__items-title">Biz bilan bog'lanish</p>
           <ul class="footer__list">
             <li class="footer__list-items">
-              <a class="footer__text" href="#"> Call: (237) 681-812-255 </a>
+              <a class="footer__text" href="#"> Tel: (237) 681-812-255 </a>
             </li>
             <li class="footer__list-items">
               <a class="footer__text" href="#">
@@ -971,17 +1061,17 @@
               </a>
             </li>
             <li class="footer__list-items">
-              <a class="footer__text" href="#"> Address: 0123 Some place </a>
+              <a class="footer__text" href="#"> Manzil: 0123 Ko'cha nomi </a>
             </li>
             <li class="footer__list-items">
-              <a class="footer__text" href="#"> Some country </a>
+              <a class="footer__text" href="#"> Shahar, Davlat </a>
             </li>
           </ul>
         </div>
         <div class="footer__items">
-          <p class="footer__items-title">Newsletter</p>
+          <p class="footer__items-title">Yangiliklar</p>
           <input
-            placeholder="Enter your email address"
+            placeholder="Email manzilingizni kiriting"
             class="appoint__input footer__input"
             type="email"
           />
@@ -989,9 +1079,11 @@
       </div>
       <div class="footer__bottom contain">
         <p class="footer__text">
-          © 2021 Hospital’s name All Rights Reserved by PNTEC-LTD
+          © 2021 Shifoxona nomi. Barcha huquqlar PNTEC-LTD tomonidan
+          himoyalangan.
         </p>
         <div class="footer__icons">
+          <!-- SVG ikonkalari o'zgarishsiz qoladi -->
           <svg
             width="24"
             height="24"
@@ -1031,6 +1123,7 @@
         </div>
       </div>
     </footer>
+
     <script src="./index.js"></script>
   </body>
 </html>
